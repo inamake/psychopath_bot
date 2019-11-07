@@ -2,8 +2,6 @@
 
 from flask import Flask, request, abort
 
-from collections import defaultdict
-
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -41,7 +39,7 @@ def callback():
 
     return 'OK'
 
-おうむ返しする。
+#おうむ返しする。
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     line_bot_api.reply_message(
