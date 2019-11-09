@@ -53,7 +53,7 @@ def diagnosis_message(event):
 
     items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
-    messages = TextSendMessage(text="診断①(1〜5で答えてください。)",
+    messages = TextSendMessage(text="診断①(選択肢1〜5で答えてください。)",
                                quick_reply=QuickReply(items=items))
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
