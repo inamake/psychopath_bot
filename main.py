@@ -48,16 +48,15 @@ def callback():
 
 #クイックリプライ機能の実装
 @handler.add(MessageEvent, message=TextMessage)
-def response_message(event):
-    language_list = ["Ruby", "Python", "PHP", "Java", "C"]
+def diagnosis_message(event):
+    answer_list = [1, 2, 3, 4, 5]
 
-    items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}が好き")) for language in language_list]
+    items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
-    messages = TextSendMessage(text="どの言語が好きですか？",
+    messages = TextSendMessage(text="診断①(1〜5で答えてください。)",
                                quick_reply=QuickReply(items=items))
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
-
 
 
 if __name__ == "__main__":
