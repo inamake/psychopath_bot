@@ -9,7 +9,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, LocationMessage,
+    MessageEvent, TextMessage, TextSendMessage, QuickReplyButton, MessageAction, QuickReply,
 )
 import os
 
@@ -40,11 +40,25 @@ def callback():
     return 'OK'
 
 #おうむ返しする。
+#@handler.add(MessageEvent, message=TextMessage)
+#def handle_message(event):
+#    line_bot_api.reply_message(
+#        event.reply_token,
+#        TextSendMessage(text=event.message.text))
+
+#クイックリプライ機能の実装
 @handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
+def response_message(event):
+    language_list = ["Ruby", "Python", "PHP", "Java", "C"]
+
+    items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}が好き")) for language in language_list]
+
+    messages = TextSendMessage(text="どの言語が好きですか？",
+                               quick_reply=QuickReply(items=items))
+
+    line_bot_api.reply_message(event.reply_token, messages=messages)
+
+
 
 if __name__ == "__main__":
 #    app.run()
