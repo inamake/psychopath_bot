@@ -79,6 +79,9 @@ def diagnosis_question(event):
     elif diagnosis_class_count == 15:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたは超絶ヤバイです。"))
 
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ERROR"))
+
 
 if __name__ == "__main__":
 #    app.run()
