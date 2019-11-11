@@ -57,10 +57,10 @@ def diagnosis_question(event):
     answer_list = [1, 2, 3, 4, 5]
     question = ["診断①(選択肢1〜5で答えてください。)","診断②(選択肢1〜5で答えてください。)","診断③(選択肢1〜5で答えてください。)"]
 
-    for num in question:
+    for num in range(2):
         items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
-        messages = TextSendMessage(text=num[i],
+        messages = TextSendMessage(text=question[i],
                                quick_reply=QuickReply(items=items))
 
         line_bot_api.reply_message(event.reply_token, messages=messages)
