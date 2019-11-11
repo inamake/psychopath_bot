@@ -15,7 +15,7 @@ import os
 
 app = Flask(__name__)
 
-diagnosis_class_count = 0
+#diagnosis_class_count = 0
 
 
 #環境変数取得
@@ -52,7 +52,7 @@ def callback():
 #クイックリプライ機能の実装（診断）
 @handler.add(MessageEvent, message=TextMessage)
 def diagnosis_question(event):
-    global diagnosis_class_count
+    #global diagnosis_class_count
     answer_list = [1, 2, 3, 4, 5]
     question = ["診断①(選択肢1〜5で答えてください。)","診断②(選択肢1〜5で答えてください。)","診断③(選択肢1〜5で答えてください。)"]
 
@@ -64,10 +64,10 @@ def diagnosis_question(event):
 
         line_bot_api.reply_message(event.reply_token, messages=messages)
 
-        diagnosis_class_count = diagnosis_class_count + int(items)
+        #diagnosis_class_count = diagnosis_class_count + int(items)
 
 
-# 判定
+# 判定（結果発表）
 #    if diagnosis_class_count == 3:
 #        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="【診断結果】\nあなたはとても良いです。"))
 #
