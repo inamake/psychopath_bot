@@ -52,7 +52,7 @@ def callback():
 #クイックリプライ機能の実装（診断）
 @handler.add(MessageEvent, message=TextMessage)
 def diagnosis_question(event):
-    i = 0
+    i = 2
     global diagnosis_class_count
     answer_list = [1, 2, 3, 4, 5]
     question = ["診断①(選択肢1〜5で答えてください。)","診断②(選択肢1〜5で答えてください。)","診断③(選択肢1〜5で答えてください。)"]
