@@ -60,7 +60,7 @@ def diagnosis_question(event):
     for num in question:
         items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
-        messages = TextSendMessage(text=num,
+        messages = TextSendMessage(text=num[i],
                                quick_reply=QuickReply(items=items))
 
         line_bot_api.reply_message(event.reply_token, messages=messages)
