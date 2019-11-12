@@ -96,8 +96,8 @@ def diagnosis_question1(event):
 
             diagnosis_class_count = diagnosis_class_count + int(items)
 
-
-            # 判定（結果発表）
+            '''
+            # 判定（結果表示）
             @handler.add(MessageEvent, message=TextMessage)
             def diagnosis_judgment(event):
                 global diagnosis_class_count
@@ -115,7 +115,7 @@ def diagnosis_question1(event):
 
                 else:
                     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ERROR"))
-
+            '''
 
 if __name__ == "__main__":
 #    app.run()
