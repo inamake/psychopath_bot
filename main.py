@@ -20,11 +20,11 @@ app = Flask(__name__)
 
 
 #環境変数取得
-LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
-LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
-
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(LINE_CHANNEL_SECRET)
+# LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
+# LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
+#
+# line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
+# handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -51,11 +51,13 @@ def callback():
 #        TextSendMessage(text=event.message.text))
 
 #クイックリプライ機能の実装（診断）
-@handler.add(MessageEvent, message=TextMessage)
-def diagnosis_question(event):
+#@handler.add(MessageEvent, message=TextMessage)
+@app.route("/")
+def index():
+#def diagnosis_question(event):
     #global diagnosis_class_count
-    answer_list = [1, 2, 3, 4, 5]
-    question = ["診断①(選択肢1〜5で答えてください。)","診断②(選択肢1〜5で答えてください。)","診断③(選択肢1〜5で答えてください。)"]
+    # answer_list = [1, 2, 3, 4, 5]
+    # question = ["診断①(選択肢1〜5で答えてください。)","診断②(選択肢1〜5で答えてください。)","診断③(選択肢1〜5で答えてください。)"]
 
     name = "test"
 
