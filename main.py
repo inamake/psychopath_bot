@@ -52,11 +52,10 @@ def callback():
 #クイックリプライ機能の実装（診断）
 @handler.add(MessageEvent, message=TextMessage)
 def diagnosis_question1(event):
-    #global diagnosis_class_count
     answer_list = [1, 2, 3, 4, 5]
     question = "診断①(選択肢1〜5で答えてください。)"
 
-    items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
+    items = [QuickReplyButton(action=MessageAction(label=1, text=f"{language}")) for language in answer_list]
 
 
     messages = TextSendMessage(text=question,
@@ -64,37 +63,35 @@ def diagnosis_question1(event):
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 
-    #diagnosis_class_count = diagnosis_class_count + int(items)
-
-    @handler.add(MessageEvent, message=TextMessage)
-    def diagnosis_question2(event):
-        #global diagnosis_class_count
-        answer_list = [1, 2, 3, 4, 5]
-        question = "診断②(選択肢1〜5で答えてください。)"
-        items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in
+    if event.message.label == 1:
+        @handler.add(MessageEvent, message=TextMessage)
+        def diagnosis_question2(event):
+            answer_list = [1, 2, 3, 4, 5]
+            question = "診断②(選択肢1〜5で答えてください。)"
+            items = [QuickReplyButton(action=MessageAction(label=2, text=f"{language}")) for language in
                  answer_list]
 
-        messages = TextSendMessage(text=question,
-                                   quick_reply=QuickReply(items=items))
-
-        line_bot_api.reply_message(event.reply_token, messages=messages)
-
-        #diagnosis_class_count = diagnosis_class_count + int(items)
-
-        @handler.add(MessageEvent, message=TextMessage)
-        def diagnosis_question3(event):
-            #global diagnosis_class_count
-            answer_list = [1, 2, 3, 4, 5]
-            question = "診断③(選択肢1〜5で答えてください。)"
-            items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in
-                     answer_list]
-
             messages = TextSendMessage(text=question,
-                                       quick_reply=QuickReply(items=items))
+                                   quick_reply=QuickReply(items=items))
 
             line_bot_api.reply_message(event.reply_token, messages=messages)
 
-            #diagnosis_class_count = diagnosis_class_count + int(items)
+        if event.message.label == 2:
+            @handler.add(MessageEvent, message=TextMessage)
+            def diagnosis_question3(event):
+                answer_list = [1, 2, 3, 4, 5]
+                question = "診断③(選択肢1〜5で答えてください。)"
+                items = [QuickReplyButton(action=MessageAction(label=3, text=f"{language}")) for language in
+                        answer_list]
+
+                messages = TextSendMessage(text=question,
+                                        quick_reply=QuickReply(items=items))
+
+                line_bot_api.reply_message(event.reply_token, messages=messages)
+
+
+
+
 
             '''
             # 判定（結果表示）
