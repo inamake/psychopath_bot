@@ -54,26 +54,26 @@ def callback():
 def diagnosis_question1(event):
     #global diagnosis_class_count
     answer_list = [1, 2, 3, 4, 5]
-    question = ["診断①(選択肢1〜5で答えてください。)","診断②(選択肢1〜5で答えてください。)","診断③(選択肢1〜5で答えてください。)"]
+    question = "診断①(選択肢1〜5で答えてください。)"
 
     items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
 
-    messages = TextSendMessage(text=question[0],
+    messages = TextSendMessage(text=question,
                                quick_reply=QuickReply(items=items))
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 
-    # diagnosis_class_count = diagnosis_class_count + int(items)
+    #diagnosis_class_count = diagnosis_class_count + int(items)
 
     @handler.add(MessageEvent, message=TextMessage)
     def diagnosis_question2(event):
         answer_list = [1, 2, 3, 4, 5]
-        question = ["診断①(選択肢1〜5で答えてください。)", "診断②(選択肢1〜5で答えてください。)", "診断③(選択肢1〜5で答えてください。)"]
+        question = "診断②(選択肢1〜5で答えてください。)"
         items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in
                  answer_list]
 
-        messages = TextSendMessage(text=question[1],
+        messages = TextSendMessage(text=question,
                                    quick_reply=QuickReply(items=items))
 
         line_bot_api.reply_message(event.reply_token, messages=messages)
@@ -81,14 +81,16 @@ def diagnosis_question1(event):
         @handler.add(MessageEvent, message=TextMessage)
         def diagnosis_question3(event):
             answer_list = [1, 2, 3, 4, 5]
-            question = ["診断①(選択肢1〜5で答えてください。)", "診断②(選択肢1〜5で答えてください。)", "診断③(選択肢1〜5で答えてください。)"]
+            question = "診断③(選択肢1〜5で答えてください。)"
             items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in
                      answer_list]
 
-            messages = TextSendMessage(text=question[2],
+            messages = TextSendMessage(text=question,
                                        quick_reply=QuickReply(items=items))
 
             line_bot_api.reply_message(event.reply_token, messages=messages)
+
+            return
 
 
 
