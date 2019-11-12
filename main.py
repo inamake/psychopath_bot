@@ -15,7 +15,7 @@ import os
 
 app = Flask(__name__)
 
-#diagnosis_class_count = 0
+diagnosis_class_count = 0
 
 
 #環境変数取得
@@ -52,7 +52,7 @@ def callback():
 #クイックリプライ機能の実装（診断）
 @handler.add(MessageEvent, message=TextMessage)
 def diagnosis_question1(event):
-    #global diagnosis_class_count
+    global diagnosis_class_count
     answer_list = [1, 2, 3, 4, 5]
     question = "診断①(選択肢1〜5で答えてください。)"
 
@@ -64,10 +64,11 @@ def diagnosis_question1(event):
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 
-    #diagnosis_class_count = diagnosis_class_count + int(items)
+    diagnosis_class_count = diagnosis_class_count + int(items)
 
     @handler.add(MessageEvent, message=TextMessage)
     def diagnosis_question2(event):
+        global diagnosis_class_count
         answer_list = [1, 2, 3, 4, 5]
         question = "診断②(選択肢1〜5で答えてください。)"
         items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in
@@ -78,8 +79,11 @@ def diagnosis_question1(event):
 
         line_bot_api.reply_message(event.reply_token, messages=messages)
 
+        diagnosis_class_count = diagnosis_class_count + int(items)
+
         @handler.add(MessageEvent, message=TextMessage)
         def diagnosis_question3(event):
+            global diagnosis_class_count
             answer_list = [1, 2, 3, 4, 5]
             question = "診断③(選択肢1〜5で答えてください。)"
             items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in
@@ -90,25 +94,27 @@ def diagnosis_question1(event):
 
             line_bot_api.reply_message(event.reply_token, messages=messages)
 
-            return
+            diagnosis_class_count = diagnosis_class_count + int(items)
 
 
+            # 判定（結果発表）
+            @handler.add(MessageEvent, message=TextMessage)
+            def diagnosis_judgment(event):
+                global diagnosis_class_count
+                if diagnosis_class_count == 3:
+                    line_bot_api.reply_message(event.reply_token,TextSendMessage(text="【診断結果】\nあなたはとても良いです。"))
 
-# 判定（結果発表）
-#    if diagnosis_class_count == 3:
-#        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="【診断結果】\nあなたはとても良いです。"))
-#
-#    elif diagnosis_class_count > 3 and diagnosis_class_count <= 6:
-#        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたは普通です。"))
-#
-#    elif diagnosis_class_count > 6 and diagnosis_class_count <= 14:
-#        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたはヤバイです。"))
-#
-#    elif diagnosis_class_count == 15:
-#        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたは超絶ヤバイです。"))
-#
-#    else:
-#        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ERROR"))
+                elif diagnosis_class_count > 3 and diagnosis_class_count <= 6:
+                    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたは普通です。"))
+
+                elif diagnosis_class_count > 6 and diagnosis_class_count <= 14:
+                    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたはヤバイです。"))
+
+                elif diagnosis_class_count == 15:
+                    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="【診断結果】\nあなたは超絶ヤバイです。"))
+
+                else:
+                    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ERROR"))
 
 
 if __name__ == "__main__":
