@@ -62,6 +62,13 @@ def index():
     name = "test"
 
     return render_template('test.html', title= 'flask test', name=name)
+
+@app.route("/test")
+def index2():
+    name = "test2"
+
+    return render_template('test.html', title='flask test', name=name)
+
     # i = 0
     # while(True):
     #     items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
