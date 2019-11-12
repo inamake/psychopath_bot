@@ -44,9 +44,11 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        # TextSendMessage(text=event.message.text))
+        TextSendMessage(text="https://psychopathbot.herokuapp.com/"))
+
 
 if __name__ == "__main__":
-#    app.run()
+    app.run()
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
