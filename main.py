@@ -94,6 +94,16 @@ def response_message(event):
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 
+    if messages == "#行動を先延ばしにする人(診断)":
+        pass
+
+    elif messages == "https://renttle.jp/notes/kota/6":
+        pass
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="エラー"))
+
 
 if __name__ == "__main__":
 #    app.run()
