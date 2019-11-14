@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template
+from time import sleep
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -9,13 +10,15 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, LocationMessage,
+    MessageEvent, TextMessage, TextSendMessage, QuickReplyButton, MessageAction, QuickReply,
 )
 import os
 
 app = Flask(__name__)
 
+
 #環境変数取得
+
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
 
@@ -45,6 +48,19 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
+
+@app.route("/")
+def index():
+    name = "test"
+
+    return render_template('test.html', title= 'flask test', name=name)
+
+@app.route("/test")
+def index2():
+    name = "test2"
+
+    return render_template('test.html', title='flask test', name=name)
+
 
 if __name__ == "__main__":
 #    app.run()
