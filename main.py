@@ -53,6 +53,21 @@ def handle_message(event):
 @handler.add()
 '''
 
+'''
+#クイックリプライ機能の実装（診断）
+@handler.add(MessageEvent, message=TextMessage)
+def diagnosis_question1(event):
+    answer_list = [1, 2, 3, 4, 5]
+    question = "診断①(選択肢1〜5で答えてください。)"
+
+    items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
+
+
+    messages = TextSendMessage(text=question,
+                               quick_reply=QuickReply(items=items))
+
+    line_bot_api.reply_message(event.reply_token, messages=messages)
+'''
 
 @app.route("/")
 def index():
@@ -66,6 +81,7 @@ def index2():
 
     return render_template('test.html', title='flask test', name=name)
 
+#キャラセルカラム機能実装（診断）
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     notes = [CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle02.jpg",
