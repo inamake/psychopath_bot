@@ -68,10 +68,23 @@ def index2():
 
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    notes = [CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle02.jpg",
+    notes = [CarouselColumn(thumbnail_image_url="./img/peruson_1.png",
                             title="行動を先延ばしにする人",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
-                            actions=[{"type": "message","label": "診断","text": "test"}])
+                            actions=[{"type": "message","label": "診断","text": "#行動を先延ばしにする人(診断)"}]),
+
+              CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
+                             title="ReleaseNote】創作中の活動を報告する機能を追加しました。",
+                             text="創作中や考え中の時点の活動を共有できる機能を追加しました。",
+                             actions=[
+                                 {"type": "message", "label": "サイトURL", "text": "https://renttle.jp/notes/kota/6"}]),
+
+              CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
+                             title="【ReleaseNote】タグ機能を追加しました。",
+                             text="「イベントを作成」「記事を投稿」「本を登録」にタグ機能を追加しました。",
+                             actions=[
+                                 {"type": "message", "label": "サイトURL", "text": "https://renttle.jp/notes/kota/5"}])
+
              ]
 
     messages = TemplateSendMessage(
