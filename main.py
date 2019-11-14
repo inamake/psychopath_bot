@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, request, abort, render_template
-from time import sleep
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -10,7 +9,8 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, QuickReplyButton, MessageAction, QuickReply,
+    MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage,
+    QuickReplyButton, MessageAction, QuickReply, CarouselTemplate, CarouselColumn,
 )
 import os
 
@@ -42,12 +42,17 @@ def callback():
 
     return 'OK'
 
+'''
 #おうむ返しする。
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
+
+@handler.add()
+'''
+
 
 @app.route("/")
 def index():
@@ -60,6 +65,34 @@ def index2():
     name = "test2"
 
     return render_template('test.html', title='flask test', name=name)
+
+@handler.add(MessageEvent, message=TextMessage)
+def response_message(event):
+    notes = [CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle02.jpg",
+                            title="行動を先延ばしにする人",
+                            text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
+                            actions=[{"type": "message","label": "診断","text": "test"}]),
+            '''
+             CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
+                            title="ReleaseNote】創作中の活動を報告する機能を追加しました。",
+                            text="創作中や考え中の時点の活動を共有できる機能を追加しました。",
+                            actions=[
+                                {"type": "message", "label": "サイトURL", "text": "https://renttle.jp/notes/kota/6"}]),
+
+             CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
+                            title="【ReleaseNote】タグ機能を追加しました。",
+                            text="「イベントを作成」「記事を投稿」「本を登録」にタグ機能を追加しました。",
+                            actions=[
+                                {"type": "message", "label": "サイトURL", "text": "https://renttle.jp/notes/kota/5"}])
+            '''
+             ]
+
+    messages = TemplateSendMessage(
+        alt_text='template',
+        template=CarouselTemplate(columns=notes),
+    )
+
+    line_bot_api.reply_message(event.reply_token, messages=messages)
 
 
 if __name__ == "__main__":
