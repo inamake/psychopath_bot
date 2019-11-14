@@ -74,16 +74,16 @@ def response_message(event):
                             actions=[{"type": "message","label": "診断","text": "#行動を先延ばしにする人(診断)"}]),
 
               CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
-                             title="ReleaseNote】創作中の活動を報告する機能を追加しました。",
-                             text="創作中や考え中の時点の活動を共有できる機能を追加しました。",
+                             title="テスト",
+                             text="テスト",
                              actions=[
-                                 {"type": "message", "label": "サイトURL", "text": "https://renttle.jp/notes/kota/6"}]),
+                                 {"type": "message", "label": "診断", "text": "#テスト"}]),
 
               CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
-                             title="【ReleaseNote】タグ機能を追加しました。",
-                             text="「イベントを作成」「記事を投稿」「本を登録」にタグ機能を追加しました。",
+                             title="テスト",
+                             text="テスト",
                              actions=[
-                                 {"type": "message", "label": "サイトURL", "text": "https://renttle.jp/notes/kota/5"}])
+                                 {"type": "message", "label": "診断", "text": "#テスト"}])
 
              ]
 
@@ -94,15 +94,6 @@ def response_message(event):
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 
-    if messages == "#行動を先延ばしにする人(診断)":
-        pass
-
-    elif messages == "https://renttle.jp/notes/kota/6":
-        pass
-    else:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="エラー"))
 
 
 if __name__ == "__main__":
