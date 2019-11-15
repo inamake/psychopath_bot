@@ -86,7 +86,7 @@ def index2():
 @app.route("/")
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    notes = [CarouselColumn(thumbnail_image_url="img/peruson_1.jpg",
+    notes = [CarouselColumn(thumbnail_image_url="peruson_1.jpg",
                             title="行動を先延ばしにする人",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                             actions=[{"type": "message","label": "診断","text": "#行動を先延ばしにする人(診断)"}]),
