@@ -68,7 +68,7 @@ def diagnosis_question1(event):
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 '''
-
+'''
 @app.route("/")
 def index():
     name = "test"
@@ -80,11 +80,13 @@ def index2():
     name = "test2"
 
     return render_template('test.html', title='flask test', name=name)
+'''
 
 #キャラセルカラム機能実装（診断）
+@app.route("/")
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    notes = [CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle02.jpg",
+    notes = [CarouselColumn(thumbnail_image_url="img/peruson_1.jpg",
                             title="行動を先延ばしにする人",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                             actions=[{"type": "message","label": "診断","text": "#行動を先延ばしにする人(診断)"}]),
