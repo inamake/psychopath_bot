@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>あなたはどのくらい先延ばし屋か</h1>
+    <p>以下の内容について、あなたにとって最も当てはまる内容を選べ。</p>
+
+    <form action="/result" method="post">
+    <p>
+        テキストテキストテキスト<br>
+        <input type="radio" name="radio1" value="0">いつも
+        <input type="radio" name="radio1" value="1">だいたい
+        <input type="radio" name="radio1" value="2">ときどき
+        <input type="radio" name="radio1" value="3">めったにない<br>
+
+        テキストテキストテキスト<br>
+        <input type="radio" name="radio2" value="0">いつも
+        <input type="radio" name="radio2" value="1">だいたい
+        <input type="radio" name="radio2" value="2">ときどき
+        <input type="radio" name="radio2" value="3">めったにない<br>
+
+        <input type="submit" value="完了">
+
+    </p>
+    </form>
+{% endblock %}
