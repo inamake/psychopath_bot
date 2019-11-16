@@ -39,6 +39,14 @@ def callback():
 
     return 'OK'
 
+#おうむ返しする。
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=event.message.text))
+        # TextSendMessage(text="https://psychopathbot.herokuapp.com/putOffTest"))
+    
 @app.route("/putOffTest")
 def putOffTest():
     return render_template('putOffTest.html')
@@ -51,14 +59,6 @@ def result():
     line_bot_api.reply_message(
         TextSendMessage(text=result1)
     )
-
-#おうむ返しする。
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
-        # TextSendMessage(text="https://psychopathbot.herokuapp.com/putOffTest"))
 
 
 if __name__ == "__main__":
