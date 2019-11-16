@@ -69,19 +69,6 @@ def diagnosis_question1(event):
     line_bot_api.reply_message(event.reply_token, messages=messages)
 '''
 
-# @app.route("/putOffTest")
-# def putOffTest():
-#     return render_template('putOffTest.html')
-#
-#
-# result1 = "failed"
-# @app.route("/result")
-# def result():
-#     global result1
-#     result1 = request.args.get('radio1', '')
-#     line_bot_api.reply_message(
-#         TextSendMessage(text=result1)
-
 
 #キャラセルカラム機能実装（診断）
 @app.route("/")
@@ -114,6 +101,18 @@ def response_message(event):
     line_bot_api.reply_message(event.reply_token, messages=messages)
 
 
+@app.route("/putOffTest")
+def putOffTest():
+    return render_template('putOffTest.html')
+
+
+result1 = "failed"
+@app.route("/result")
+def result():
+    global result1
+    result1 = request.args.get('radio1', '')
+    line_bot_api.reply_message(
+        TextSendMessage(text=result1))
 
 if __name__ == "__main__":
 #    app.run()
