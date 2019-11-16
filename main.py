@@ -68,19 +68,20 @@ def diagnosis_question1(event):
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
 '''
-'''
-@app.route("/")
-def index():
-    name = "test"
 
-    return render_template('test.html', title= 'flask test', name=name)
+# @app.route("/putOffTest")
+# def putOffTest():
+#     return render_template('putOffTest.html')
+#
+#
+# result1 = "failed"
+# @app.route("/result")
+# def result():
+#     global result1
+#     result1 = request.args.get('radio1', '')
+#     line_bot_api.reply_message(
+#         TextSendMessage(text=result1)
 
-@app.route("/test")
-def index2():
-    name = "test2"
-
-    return render_template('test.html', title='flask test', name=name)
-'''
 
 #キャラセルカラム機能実装（診断）
 @app.route("/")
