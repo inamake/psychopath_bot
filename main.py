@@ -44,22 +44,22 @@ def callback():
 def handle_message(event):
     text = event.message.text
     line_bot_api.reply_message(
-        event.reply_token, 
+        event.reply_token,
         TextSendMessage(text=text))
         # TextSendMessage(text="https://psychopathbot.herokuapp.com/putOffTest"))
 
-@app.route("/putOffTest")
-def putOffTest():
-    return render_template('putOffTest.html')
-
-result1 = "failed"
-@app.route("/result")
-def result():
-    global result1
-    result1 = request.args.get('radio1', '')
-    line_bot_api.reply_message(
-        TextSendMessage(text=result1)
-    )
+# @app.route("/putOffTest")
+# def putOffTest():
+#     return render_template('putOffTest.html')
+#
+# result1 = "failed"
+# @app.route("/result")
+# def result():
+#     global result1
+#     result1 = request.args.get('radio1', '')
+#     line_bot_api.reply_message(
+#         TextSendMessage(text=result1)
+#     )
 
 
 if __name__ == "__main__":
