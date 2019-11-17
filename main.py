@@ -105,7 +105,7 @@ def response_message(event):
 def putOffTest():
     return render_template('putOffTest.html', title="実行あるのみ")
 
-
+answerList = [0, 1, 2, 3]
 @app.route("/result")
 def result():
     replyList = []
@@ -113,7 +113,7 @@ def result():
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
         reply = request.args.get('{}'.format(testNumber), '')
-        if int(reply) >= 0:
+        if int(reply) in answerList:
             replyList.append(int(reply))
 
     if int(total) == len(replyList):

@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="116" column="40" lean-forward="true" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+            <state relative-caret-position="217">
+              <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
               <folding>
                 <element signature="e#25#81#0" expanded="true" />
               </folding>
@@ -209,7 +209,7 @@
       <workItem from="1573316878775" duration="728000" />
       <workItem from="1573436130874" duration="7742000" />
       <workItem from="1573481293023" duration="921000" />
-      <workItem from="1573959614169" duration="11745000" />
+      <workItem from="1573959614169" duration="12689000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1573289131861</created>
@@ -302,11 +302,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573973863387</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="データ取得">
+      <created>1573975384212</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1573975384212</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28111000" />
+    <option name="totallyTimeSpent" value="29055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="673" y="40" width="694" height="735" extended-state="0" />
@@ -485,8 +492,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="116" column="40" lean-forward="true" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+        <state relative-caret-position="217">
+          <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
           <folding>
             <element signature="e#25#81#0" expanded="true" />
           </folding>
