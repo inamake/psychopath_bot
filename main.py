@@ -116,7 +116,8 @@ def result():
         replyList.append(int(reply))
 
     if int(total) == len(replyList):
-        return sum(replyList)
+        totalReply = sum(replyList)
+        return "{}".format(totalReply)
     else:
         return "全てに回答して下さい"
     # reply = request.args.get('test1', '')
