@@ -113,7 +113,8 @@ def result():
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
         reply = request.args.get('{}'.format(testNumber), '')
-        replyList.append(int(reply))
+        if int(reply) >= 0:
+            replyList.append(int(reply))
 
     if int(total) == len(replyList):
         totalReply = sum(replyList)
