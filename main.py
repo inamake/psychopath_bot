@@ -103,7 +103,7 @@ def response_message(event):
 
 @app.route("/putOffTest")
 def putOffTest():
-    return render_template('putOffTest.html')
+    return render_template('putOffTest.html', title="あなたはどのくらい先延ばし屋か？")
 
 
 # result = []
