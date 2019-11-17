@@ -103,18 +103,24 @@ def response_message(event):
 
 @app.route("/putOffTest")
 def putOffTest():
-    return render_template('putOffTest.html', title="あなたはどのくらい先延ばし屋か？")
+    return render_template('putOffTest.html', title="実行あるのみ")
 
 
-# result = []
 @app.route("/result")
 def result():
-    # global result
-    # result1 = request.args.get('radio1', '')
-    # line_bot_api.reply_message(
-    #     TextSendMessage(text=result1))
-    reply = request.args.get('test1', '')
-    return "{}".format(reply)
+    replyList = []
+    total = request.args.get('total', '')
+    for num in range(int(total)):
+        testNumber = 'test{}'.format(num)
+        reply = request.args.get('{}'.format(testNumber), '')
+        replyList.append(int(reply))
+
+    if int(total) == len(replyList):
+        return sum(replyList)
+    else:
+        return "全てに回答して下さい"
+    # reply = request.args.get('test1', '')
+    # return "{}".format(reply)
 
 if __name__ == "__main__":
 #    app.run()
