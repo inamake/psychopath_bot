@@ -113,9 +113,8 @@ def result():
     # result1 = request.args.get('radio1', '')
     # line_bot_api.reply_message(
     #     TextSendMessage(text=result1))
-    # reply = request.args.get('test1', '')
-    # return "{}".format(reply)
-    return "test"
+    reply = request.args.get('test1', '')
+    return "{}".format(reply)
 
 if __name__ == "__main__":
 #    app.run()
