@@ -106,13 +106,15 @@ def putOffTest():
     return render_template('putOffTest.html')
 
 
-result1 = "failed"
+result = []
 @app.route("/result")
 def result():
-    global result1
-    result1 = request.args.get('radio1', '')
-    line_bot_api.reply_message(
-        TextSendMessage(text=result1))
+    global result
+    # result1 = request.args.get('radio1', '')
+    # line_bot_api.reply_message(
+    #     TextSendMessage(text=result1))
+    reply = request.args.get('test1', '')
+    return reply
 
 if __name__ == "__main__":
 #    app.run()
