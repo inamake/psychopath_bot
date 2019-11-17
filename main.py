@@ -114,7 +114,7 @@ def result():
     # line_bot_api.reply_message(
     #     TextSendMessage(text=result1))
     reply = request.args.get('test1', '')
-    return reply
+    return "{}".format(reply)
 
 if __name__ == "__main__":
 #    app.run()
