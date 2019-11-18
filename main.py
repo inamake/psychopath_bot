@@ -105,12 +105,12 @@ def response_message(event):
 def putOffTest():
     return render_template('putOffTest.html', title="実行あるのみ")
 
-result = None
+totalReply = None
 @app.route("/result")
 def result():
     replyList = []
     answerList = [0, 1, 2, 3]
-    global result
+    global totalReply
     total = request.args.get('total', '')
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
