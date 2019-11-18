@@ -74,8 +74,7 @@ def diagnosis_question1(event):
 @app.route("/")
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    notes = [CarouselColumn(thumbnail_image_url="https://onedrive.live.com/?authkey=%21ArXYC2iWIp8ODLw&cid="
-                                                "F71FB2D68942405F&id=F71FB2D68942405F%21134&parId=F71FB2D68942405F%21133&o=OneUp",
+    notes = [CarouselColumn(thumbnail_image_url="https://1drv.ms/u/s!Al9AQonWsh_3gQaLQBYF5qNW9h--?e=hEKb0a",
                             title="行動を先延ばしにする人",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                             actions=[{"type": "uri","label": "診断","uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
