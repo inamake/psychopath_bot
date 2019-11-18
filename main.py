@@ -131,12 +131,11 @@ def result():
 
 # 結果表示
 def result_display():
-    global totalReply
-    if totalReply >= 0 and totalReply <= 5:
+    if totalReply >= 0 and totalReply <= 11:
         result = "０〜１１点です。"
 
-    elif totalReply >= 6 and totalReply <= 17:
-        result = "１１〜１７点です。"
+    elif totalReply >= 12 and totalReply <= 17:
+        result = "１２〜１７点です。"
 
     elif totalReply >= 18 and totalReply <= 22:
         result = "１８〜２２点です。"
