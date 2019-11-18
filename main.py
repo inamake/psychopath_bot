@@ -109,7 +109,7 @@ totalReply = None
 @app.route("/result")
 def result():
     replyList = []
-    answerList = [0, 1, 2, 30]
+    answerList = [0, 1, 2, 3]
     global totalReply
     total = request.args.get('total', '')
     for num in range(int(total)):
