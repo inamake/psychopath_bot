@@ -121,11 +121,34 @@ def result():
 
     if int(total) == len(replyList):
         totalReply = sum(replyList)
-        return "{}".format(totalReply)
+        display = result_display()
+        return "{}\n{}".format(totalReply,display)
     else:
         return "全てに回答して下さい"
     # reply = request.args.get('test1', '')
     # return "{}".format(reply)
+
+
+# 結果表示
+def result_display():
+    global totalReply
+    if totalReply >= 0 and totalReply <= 11:
+        result = "０〜１１点です。"
+
+    elif totalReply >= 12 and totalReply <= 17:
+        result = "１１〜１７点です。"
+
+    elif totalReply >= 18 and totalReply <= 22:
+        result = "１８〜２２点です。"
+
+    elif totalReply >= 23 and totalReply <= 28:
+        result = "２３〜２８点です。"
+
+    elif totalReply >= 29 and totalReply <= 33:
+        result = "２９〜３３点です。"
+
+    return result
+
 
 if __name__ == "__main__":
 #    app.run()
