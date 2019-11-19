@@ -77,7 +77,8 @@ def response_message(event):
     notes = [CarouselColumn(thumbnail_image_url="https://2.bp.blogspot.com/-MJHtCJ8P8hk/U1T3u2lAqpI/AAAAAAAAfWA/cAilQiPCLuM/s800/figure_sleeping.png",
                             title="行動を先延ばしにする人",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
-                            actions=[{"type": "uri","label": "診断","uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
+                            actions=[
+                                {"type": "uri","label": "診断", "text": "#テスト", "uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
 
               CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
                              title="テスト",
