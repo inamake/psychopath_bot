@@ -122,7 +122,7 @@ def result():
 
     if int(total) == len(replyList):
         totalReply = sum(replyList)
-        display = result_display()
+        display = diagnostics_result()
         return "{}・・・{}".format(totalReply,display)
     else:
         return "全てに回答して下さい"
@@ -131,7 +131,7 @@ def result():
 
 
 # 結果表示
-def result_display():
+def diagnostics_result():
     if totalReply >= 0 and totalReply <= 11:
         result = "０〜１１点です。"
 
