@@ -42,11 +42,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="124" column="38" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+            <state relative-caret-position="478">
+              <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
               <folding>
                 <element signature="e#25#81#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/putOffTest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -69,7 +78,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop/psychopath_bot" />
+        <entry key="$PROJECT_DIR$" value="feature/result_test" />
       </map>
     </option>
     <favorite-branches>
@@ -78,7 +87,7 @@
           <entry type="LOCAL">
             <value>
               <list>
-                <branch-info repo="$PROJECT_DIR$" source="develop/psychopath_bot" />
+                <branch-info repo="$PROJECT_DIR$" source="feature/result_test" />
               </list>
             </value>
           </entry>
@@ -122,7 +131,25 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="psychopath_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="psychopath_bot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="psychopath_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="psychopath_bot" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
@@ -186,7 +213,7 @@
       <workItem from="1573959614169" duration="12922000" />
       <workItem from="1574038628460" duration="1221000" />
       <workItem from="1574049151023" duration="19000" />
-      <workItem from="1574193583947" duration="262000" />
+      <workItem from="1574193583947" duration="4099000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1573289131861</created>
@@ -300,17 +327,45 @@
       <option name="project" value="LOCAL" />
       <updated>1574040764154</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="first?">
+      <created>1574193883706</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574193883706</updated>
+    </task>
+    <task id="LOCAL-00018" summary="テスト作成">
+      <created>1574195864324</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574195864324</updated>
+    </task>
+    <task id="LOCAL-00019" summary="テスト作成">
+      <created>1574196337474</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574196337474</updated>
+    </task>
+    <task id="LOCAL-00020" summary="テスト作成">
+      <created>1574196801740</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574196801740</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32154000" />
+    <option name="totallyTimeSpent" value="35991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.295302" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29483283" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -411,7 +466,9 @@
     <MESSAGE value="first" />
     <MESSAGE value="遷移先を追加" />
     <MESSAGE value="データ取得" />
-    <option name="LAST_COMMIT_MESSAGE" value="データ取得" />
+    <MESSAGE value="first?" />
+    <MESSAGE value="テスト作成" />
+    <option name="LAST_COMMIT_MESSAGE" value="テスト作成" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/address_data.json" />
@@ -454,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/putOffTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -481,10 +531,17 @@
     <entry file="file://$PROJECT_DIR$/runtime.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/putOffTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="124" column="38" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+        <state relative-caret-position="478">
+          <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
           <folding>
             <element signature="e#25#81#0" expanded="true" />
           </folding>
