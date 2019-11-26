@@ -105,13 +105,14 @@ def response_message(event):
 
 @app.route("/putOffTest")
 def putOffTest():
-    return render_template('putOffTest.html', title="実行あるのみ")
+    user = request.args.get('abc', '')
+    return render_template('putOffTest.html', title="実行あるのみ", abc=user)
 
 @app.route("/result")
 def result():
     replyList = []
-    user = request.args.get('abc', '')
     total = request.args.get('total', '')
+    user = request.args.get('user', '')
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
         reply = request.args.get('{}'.format(testNumber), '')
