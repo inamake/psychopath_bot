@@ -74,11 +74,12 @@ def diagnosis_question1(event):
 @app.route("/")
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
+    userID = event.source.user_id
     notes = [CarouselColumn(thumbnail_image_url="https://2.bp.blogspot.com/-MJHtCJ8P8hk/U1T3u2lAqpI/AAAAAAAAfWA/cAilQiPCLuM/s800/figure_sleeping.png",
-                            title="行動を先延ばしにする人",
+                            title="あなたはどのくらい先延ばし屋か",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                             actions=[
-                                {"type": "uri","label": "診断", "uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
+                                {"type": "uri","label": "診断", "title": "{}", "uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
 
               CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
                              title="テスト",
@@ -99,7 +100,7 @@ def response_message(event):
         template=CarouselTemplate(columns=notes),
     )
 
-    line_bot_api.reply_message(event.reply_token, messages=messages)
+    line_bot_api.reply_message(event.reply_token, messages="{}".format(userID))
 
 
 @app.route("/putOffTest")
@@ -117,8 +118,7 @@ def result():
         testNumber = 'test{}'.format(num)
         reply = request.args.get('{}'.format(testNumber), '')
         result = int(reply)
-        if result in answerList:
-            replyList.append(result)
+        replyList.append(result)
 
     if int(total) == len(replyList):
         totalReply = sum(replyList)
