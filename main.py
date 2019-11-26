@@ -100,7 +100,7 @@ def response_message(event):
         template=CarouselTemplate(columns=notes),
     )
 
-    line_bot_api.reply_message(event.reply_token, messages="{}".format(userID))
+    line_bot_api.reply_message(event.reply_token, messages=userID)
 
 
 @app.route("/putOffTest")
