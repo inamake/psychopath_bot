@@ -79,7 +79,7 @@ def response_message(event):
                             title="あなたはどのくらい先延ばし屋か",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                             actions=[
-                                {"type": "uri","label": "診断", "title": "{}", "uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
+                                {"type": "uri","label": "診断", "title": "{}".format(userID), "uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
 
               CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
                              title="テスト",
@@ -100,10 +100,7 @@ def response_message(event):
         template=CarouselTemplate(columns=notes),
     )
 
-    # line_bot_api.reply_message(event.reply_token, messages=messages)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=userID))
+    line_bot_api.reply_message(event.reply_token, messages=messages)
 
 
 @app.route("/putOffTest")
