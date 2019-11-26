@@ -112,7 +112,7 @@ def putOffTest():
 def result():
     replyList = []
     total = request.args.get('total', '')
-    user = request.args.get('user', '')
+    user = request.args.get('abc', '')
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
         reply = request.args.get('{}'.format(testNumber), '')
