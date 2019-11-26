@@ -122,7 +122,7 @@ def result():
     if int(total) == len(replyList):
         totalReply = sum(replyList)
         estimate = diagnostics_result(totalReply)
-        return "{}・・・{}".format(totalReply,estimate,user)
+        return "{}・・・{}".format(user, estimate)
     else:
         return "全てに回答して下さい"
     # reply = request.args.get('test1', '')
