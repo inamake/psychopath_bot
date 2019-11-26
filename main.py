@@ -79,7 +79,7 @@ def response_message(event):
                             title="あなたはどのくらい先延ばし屋か",
                             text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                             actions=[
-                                {"type": "uri","label": "診断", "title": "{}".format(userID), "uri": "https://psychopathbot.herokuapp.com/putOffTest"}]),
+                                {"type": "uri","label": "診断", "uri": "https://psychopathbot.herokuapp.com/putOffTest?{}".format(userID)}]),
 
               CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
                              title="テスト",
@@ -107,12 +107,9 @@ def response_message(event):
 def putOffTest():
     return render_template('putOffTest.html', title="実行あるのみ")
 
-totalReply = None
 @app.route("/result")
 def result():
     replyList = []
-    answerList = [0, 1, 2, 3]
-    global totalReply
     total = request.args.get('total', '')
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
@@ -122,7 +119,7 @@ def result():
 
     if int(total) == len(replyList):
         totalReply = sum(replyList)
-        estimate = diagnostics_result()
+        estimate = diagnostics_result(totalReply)
         return "{}・・・{}".format(totalReply,estimate)
     else:
         return "全てに回答して下さい"
@@ -131,7 +128,7 @@ def result():
 
 
 # 結果表示
-def diagnostics_result():
+def diagnostics_result(totalReply):
     if totalReply >= 0 and totalReply <= 11:
         result = "あなたは筋金入りの先延ばし屋。先延ばしにすることであなたの生活の質は大幅にさがっている。" \
                  "改善しよう！いますぐ！"
