@@ -132,7 +132,9 @@ def result():
         totalReply = sum(replyList)
         estimate = diagnosticsResult(totalReply)
         saveTestData(user, title, totalReply)
-        return "{}・・・{}・・・{}".format(user, totalReply, estimate)
+        savedData = readData()
+        return "{}".format(savedData)
+        # return "{}・・・{}・・・{}".format(user, totalReply, estimate)
     else:
         return "全てに回答して下さい"
     # reply = request.args.get('test1', '')
@@ -175,6 +177,12 @@ def saveTestData(id, testName, score):
 
     f = open('data.json', 'w')
     json.dump(dict, f, indent=4)
+
+def readData():
+    f = open('data.json', 'r')
+    jsonData = json.load(f)
+
+    return jsonData
 
 if __name__ == "__main__":
 #    app.run()
