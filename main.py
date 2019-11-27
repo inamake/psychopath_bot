@@ -13,12 +13,20 @@ from linebot.models import (
     QuickReplyButton, MessageAction, QuickReply, CarouselTemplate, CarouselColumn,
 )
 import os
+import json
 
 app = Flask(__name__)
 
+dict = {
+    'userID':{
+        'test':{
+            'title':'',
+            'score':''
+        }
+    }
+}
 
 #環境変数取得
-
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
 
@@ -113,6 +121,7 @@ def result():
     replyList = []
     total = request.args.get('total', '')
     user = request.args.get('abc', '')
+    title = request.args.get('title', '')
     for num in range(int(total)):
         testNumber = 'test{}'.format(num)
         reply = request.args.get('{}'.format(testNumber), '')
@@ -121,8 +130,9 @@ def result():
 
     if int(total) == len(replyList):
         totalReply = sum(replyList)
-        estimate = diagnostics_result(totalReply)
-        return "{}・・・{}".format(user, totalReply)
+        estimate = diagnosticsResult(totalReply)
+        saveTestData(user, title, totalReply)
+        return "{}・・・{}・・・{}".format(user, totalReply, estimate)
     else:
         return "全てに回答して下さい"
     # reply = request.args.get('test1', '')
@@ -131,7 +141,7 @@ def result():
 
 # 結果表示
 # TODO: 条件・テキストをテストごとに別ファイルにまとめる
-def diagnostics_result(totalReply):
+def diagnosticsResult(totalReply):
     if totalReply >= 0 and totalReply <= 11:
         result = "あなたは筋金入りの先延ばし屋。先延ばしにすることであなたの生活の質は大幅にさがっている。" \
                  "改善しよう！いますぐ！"
@@ -153,6 +163,18 @@ def diagnostics_result(totalReply):
 
     return result
 
+def saveTestData(id, testName, score):
+    dict = {
+        '{}'.format(id): {
+            'test': {
+                'title': '{}'.format(testName),
+                'score': '{}'.format(score)
+            }
+        }
+    }
+
+    f = open('data.json', 'w')
+    json.dump(dict, f, indent=4)
 
 if __name__ == "__main__":
 #    app.run()
