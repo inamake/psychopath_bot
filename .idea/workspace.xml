@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8db54256-7916-4a15-bd86-49ff71b7f2aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/putOffTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/putOffTest.html" afterDir="false" />
-    </list>
+    <list default="true" id="8db54256-7916-4a15-bd86-49ff71b7f2aa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +34,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
+            <state relative-caret-position="-180">
               <caret line="133" column="45" lean-forward="true" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
               <folding>
                 <element signature="e#25#81#0" expanded="true" />
@@ -215,7 +211,7 @@
       <workItem from="1574038628460" duration="1221000" />
       <workItem from="1574049151023" duration="19000" />
       <workItem from="1574193583947" duration="4099000" />
-      <workItem from="1574820574152" duration="3874000" />
+      <workItem from="1574820574152" duration="4437000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1573289131861</created>
@@ -434,11 +430,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574830105898</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="データ保存">
+      <created>1574832034967</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1574832034967</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45258000" />
+    <option name="totallyTimeSpent" value="45821000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,7 +648,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
+        <state relative-caret-position="-180">
           <caret line="133" column="45" lean-forward="true" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
           <folding>
             <element signature="e#25#81#0" expanded="true" />
