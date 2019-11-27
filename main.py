@@ -122,7 +122,7 @@ def result():
     if int(total) == len(replyList):
         totalReply = sum(replyList)
         estimate = diagnostics_result(totalReply)
-        return "{}・・・{}".format(user, estimate)
+        return "{}・・・{}".format(user, totalReply)
     else:
         return "全てに回答して下さい"
     # reply = request.args.get('test1', '')
@@ -130,6 +130,7 @@ def result():
 
 
 # 結果表示
+# TODO: 条件・テキストをテストごとに別ファイルにまとめる
 def diagnostics_result(totalReply):
     if totalReply >= 0 and totalReply <= 11:
         result = "あなたは筋金入りの先延ばし屋。先延ばしにすることであなたの生活の質は大幅にさがっている。" \
