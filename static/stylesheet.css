@@ -1,4 +1,11 @@
 body{
-    background-color: #D2D200;
+    background-color: #40AAEF;
 
+}
+
+h1{
+    padding: 0.5em;/*文字周りの余白*/
+    color: #494949;/*文字色*/
+    background: #fffaf4;/*背景色*/
+    border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
 }
