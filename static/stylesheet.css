@@ -12,15 +12,15 @@ h1{
 }
 
 
-.radio-input{
+.radio-input1{
   display: none;
 }
-.radio-input + label{
+.radio-input1 + label{
   padding-left: 20px;
   position:relative;
   margin-right: 20px;
 }
-.radio-input + label::before{
+.radio-input1 + label::before{
   content: "";
   display: block;
   position: absolute;
@@ -31,10 +31,10 @@ h1{
   border: 1px solid #999;
   border-radius: 50%;
 }
-.radio-input:checked + label{
+.radio-input1:checked + label{
   color: #d01137;
 }
-.radio-input:checked + label::after{
+.radio-input1:checked + label::after{
   content: "";
   display: block;
   position: absolute;
