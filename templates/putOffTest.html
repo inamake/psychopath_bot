@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-<h1><center>あなたはどのくらい先延ばし屋か</center</h1>
+    <div align="center"><h1>あなたはどのくらい先延ばし屋か</h1></div>
     <p><font size="7">以下の内容について、あなたにとって最も当てはまる内容を選べ。</font></p>
 
     <form action="/result" method="GET">
@@ -184,7 +184,7 @@
 
         <input type="hidden" name="total" value="11">
         <input type="hidden" name="abc" value="{{ abc }}">
-        <center><input type="submit" value="完了" style="WIDTH: 25%; HEIGHT: 90px"></center>
+        <div align="center"><input type="submit" value="完了" style="WIDTH: 25%; HEIGHT: 90px"></div>
     </font>
     </p>
     </form>
