@@ -1,6 +1,10 @@
-body {
-  font-size: large;
-  background-color: white;
+body{
+    background-color: #FFFFFF;
+
+}
+
+p{
+    font-size: 80px;
 }
 
 h1{
