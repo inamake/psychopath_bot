@@ -53,7 +53,7 @@ def handle_message(event):
 @handler.add()
 '''
 
-
+'''
 #クイックリプライ機能の実装（診断）
 @handler.add(MessageEvent, message=TextMessage)
 def diagnosis_question1(event):
@@ -67,6 +67,7 @@ def diagnosis_question1(event):
                                quick_reply=QuickReply(items=items))
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
+'''
 
 #友達追加時、アクション
 @handler.add(FollowEvent)
@@ -118,7 +119,7 @@ def response_message(event):
 @app.route("/putOffTest")
 def putOffTest():
     user = request.args.get('abc', '')
-    return render_template('putOffTest.html', title="実行あるのみ", abc=user)
+    return render_template('putOffTest.html', title="『行動を先延ばしにする人』診断", abc=user)
 
 @app.route("/result")
 def result():
