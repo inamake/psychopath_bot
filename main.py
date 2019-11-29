@@ -145,20 +145,20 @@ def result():
 # 結果表示
 def diagnostics_result(totalReply):
     if totalReply >= 0 and totalReply <= 11:
-        result = "あなたは筋金入りの先延ばし屋。先延ばしにすることであなたの生活の質は大幅にさがっている。" \
+        result = "筋金入りの先延ばし屋。先延ばしにすることであなたの生活の質は大幅にさがっている。" \
                  "改善しよう！いますぐ！"
 
     elif totalReply >= 12 and totalReply <= 17:
-        result = "あなたはかなりの先延ばし屋。しかし既に、現状に疑問を抱いてはいる。対処は可能だ。"
+        result = "かなりの先延ばし屋。しかし既に、現状に疑問を抱いてはいる。対処は可能だ。"
 
     elif totalReply >= 18 and totalReply <= 22:
         result = "そこそこの先延ばし屋で、改善の余地あり。でもおそらく、あなたならこの悪習を断ち切れるはずだ。"
 
     elif totalReply >= 23 and totalReply <= 28:
-        result = "あなたはときどき横道にそれることもあるが、だいたいにおいて先延ばしをする心配はあまりない。"
+        result = "ときどき横道にそれることもあるが、だいたいにおいて先延ばしをする心配はあまりない。"
 
     elif totalReply >= 29 and totalReply <= 33:
-        result = "あなたは自制心のあるきちんとした人。先延ばしをする心配は全くない。"
+        result = "自制心のあるきちんとした人。先延ばしをする心配は全くない。"
 
     else:
         result = "-*-ERROR-*-"
