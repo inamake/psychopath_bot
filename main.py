@@ -74,34 +74,38 @@ def diagnosis_question1(event):
 @app.route("/")
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    userID = event.source.user_id
-    notes = [CarouselColumn(thumbnail_image_url="https://2.bp.blogspot.com/-MJHtCJ8P8hk/U1T3u2lAqpI/AAAAAAAAfWA/cAilQiPCLuM/s800/figure_sleeping.png",
-                            title="あなたはどのくらい先延ばし屋か",
-                            text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
-                            actions=[
-                                {"type": "uri","label": "診断", "uri": "https://psychopathbot.herokuapp.com/putOffTest?abc={}".format(userID)}]),
+    if event.messeage.text == "診断":
+        userID = event.source.user_id
+        notes = [CarouselColumn(thumbnail_image_url="https://2.bp.blogspot.com/-MJHtCJ8P8hk/U1T3u2lAqpI/AAAAAAAAfWA/cAilQiPCLuM/s800/figure_sleeping.png",
+                                title="あなたはどのくらい先延ばし屋か",
+                                text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
+                                actions=[
+                                    {"type": "uri","label": "診断", "uri": "https://psychopathbot.herokuapp.com/putOffTest?abc={}".format(userID)}]),
 
-              CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
-                             title="テスト",
-                             text="テスト",
-                             actions=[
-                                 {"type": "message", "label": "診断", "text": "#テスト"}]),
+                CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
+                                title="テスト",
+                                text="テスト",
+                                actions=[
+                                    {"type": "message", "label": "診断", "text": "#テスト"}]),
 
-              CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
-                             title="テスト",
-                             text="テスト",
-                             actions=[
-                                 {"type": "message", "label": "診断", "text": "#テスト"}])
+                CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
+                                title="テスト",
+                                text="テスト",
+                                actions=[
+                                    {"type": "message", "label": "診断", "text": "#テスト"}])
 
-             ]
+                ]
 
-    messages = TemplateSendMessage(
-        alt_text='template',
-        template=CarouselTemplate(columns=notes),
-    )
+        messages = TemplateSendMessage(
+            alt_text='template',
+            template=CarouselTemplate(columns=notes),
+        )
 
-    line_bot_api.reply_message(event.reply_token, messages=messages)
-
+        line_bot_api.reply_message(event.reply_token, messages=messages)
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="『診断』と送ってください。"))
 
 @app.route("/putOffTest")
 def putOffTest():
