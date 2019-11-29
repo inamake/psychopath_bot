@@ -53,12 +53,12 @@ def handle_message(event):
 @handler.add()
 '''
 
-#友達追加時、アクション
+
 #クイックリプライ機能の実装（診断）
-@handler.add(FollowEvent,MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=TextMessage)
 def diagnosis_question1(event):
-    answer_list = ["診断", "結果"]
-    question = "友達追加ありがとうございます。\nまずは、「診断」と入力して、複数の診断から選択してください。"
+    answer_list = ["診断","結果"]
+    question = "「診断」か「結果を選択してください。」"
 
     items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
@@ -67,6 +67,13 @@ def diagnosis_question1(event):
                                quick_reply=QuickReply(items=items))
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
+
+#友達追加時、アクション
+@handler.add(FollowEvent)
+def on_follow(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text="友達追加ありがとうございます。\nまずは、「診断」と入力して、複数の診断から選択してください。"))
 
 
 #キャラセルカラム機能実装（診断）
