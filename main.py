@@ -74,7 +74,7 @@ def diagnosis_question1(event):
 @app.route("/")
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    if event.messeage.text == "診断":
+    if event.message.text == "診断":
         userID = event.source.user_id
         notes = [CarouselColumn(thumbnail_image_url="https://2.bp.blogspot.com/-MJHtCJ8P8hk/U1T3u2lAqpI/AAAAAAAAfWA/cAilQiPCLuM/s800/figure_sleeping.png",
                                 title="あなたはどのくらい先延ばし屋か",
@@ -106,6 +106,8 @@ def response_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="『診断』と送ってください。"))
+
+
 
 @app.route("/putOffTest")
 def putOffTest():
