@@ -10,7 +10,7 @@ from linebot.exceptions import (
 )
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage,
-    QuickReplyButton, MessageAction, QuickReply, CarouselTemplate, CarouselColumn,
+    FollowEvent,CarouselTemplate, CarouselColumn,QuickReplyButton,MessageAction,QuickReply
 )
 import os
 
@@ -53,12 +53,12 @@ def handle_message(event):
 @handler.add()
 '''
 
-'''
+#友達追加時、アクション
 #クイックリプライ機能の実装（診断）
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(FollowEvent,MessageEvent, message=TextMessage)
 def diagnosis_question1(event):
-    answer_list = [1, 2, 3, 4, 5]
-    question = "診断①(選択肢1〜5で答えてください。)"
+    answer_list = ["診断", "結果"]
+    question = "友達追加ありがとうございます。\nまずは、「診断」と入力して、複数の診断から選択してください。"
 
     items = [QuickReplyButton(action=MessageAction(label=f"{language}", text=f"{language}")) for language in answer_list]
 
@@ -67,7 +67,6 @@ def diagnosis_question1(event):
                                quick_reply=QuickReply(items=items))
 
     line_bot_api.reply_message(event.reply_token, messages=messages)
-'''
 
 
 #キャラセルカラム機能実装（診断）
