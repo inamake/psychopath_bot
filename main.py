@@ -93,13 +93,13 @@ def response_message(event):
                                 title="テスト",
                                 text="テスト",
                                 actions=[
-                                    {"type": "message", "label": "診断", "text": "#テスト"}]),
+                                    {"type": "message", "label": "---", "text": ""}]),
 
                 CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
                                 title="テスト",
                                 text="テスト",
                                 actions=[
-                                    {"type": "message", "label": "診断", "text": "#テスト"}])
+                                    {"type": "message", "label": "---", "text": ""}])
 
                 ]
 
