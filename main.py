@@ -87,19 +87,19 @@ def response_message(event):
                                 title="あなたはどのくらい先延ばし屋か",
                                 text="決断出来ない、失敗を恐れる人、完璧主義者かを診断",
                                 actions=[
-                                    {"type": "uri","label": "診断", "uri": "https://psychopathbot.herokuapp.com/putOffTest?abc={}".format(userID)}]),
-
-                CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
-                                title="テスト",
-                                text="テスト",
-                                actions=[
-                                    {"type": "message", "label": "---", "text": ""}]),
-
-                CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
-                                title="テスト",
-                                text="テスト",
-                                actions=[
-                                    {"type": "message", "label": "---", "text": ""}])
+                                    {"type": "uri","label": "診断", "uri": "https://psychopathbot.herokuapp.com/putOffTest?abc={}".format(userID)}])
+                #
+                # CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle03.jpg",
+                #                 title="テスト",
+                #                 text="テスト",
+                #                 actions=[
+                #                     {"type": "message", "label": "---", "text": "---"}]),
+                #
+                # CarouselColumn(thumbnail_image_url="https://renttle.jp/static/img/renttle04.jpg",
+                #                 title="テスト",
+                #                 text="テスト",
+                #                 actions=[
+                #                     {"type": "message", "label": "---", "text": ""}])
 
                 ]
 
