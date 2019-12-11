@@ -141,6 +141,10 @@ def result():
     # reply = request.args.get('test1', '')
     # return "{}".format(reply)
 
+@app.route("/PWATest")
+def PWATest():
+    return render_template('PWATest.html')
+
 
 # 結果表示
 def diagnostics_result(totalReply):
